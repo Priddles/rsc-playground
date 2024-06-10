@@ -6,9 +6,9 @@ export default async function Bar() {
   const bye = await Promise.resolve("goodbye");
 
   return (
-    <>
+    <Box title="">
       <Box title={hi} />
       <Box title={bye} />
-    </>
+    </Box>
   );
 }

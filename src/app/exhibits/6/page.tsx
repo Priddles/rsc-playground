@@ -1,4 +1,5 @@
 import Box from "@/components/Box/Box";
+import Title from "@/components/Title/Title";
 import { delayedMessage } from "@/lib/actions";
 import { randomInt } from "crypto";
 import { Suspense } from "react";
@@ -13,11 +14,12 @@ export async function expensiveMessage(msg: string) {
 
 export default function Page() {
   return (
-    <Box title="">
-      <Suspense fallback={<span>Loading foo...</span>}>
+    <Box plain>
+      <Title>What if you can&apos;t know what promises you need?</Title>
+      <Suspense fallback={<div>Loading foo...</div>}>
         <Foo />
       </Suspense>
-      <Suspense fallback={<span>Loading bar...</span>}>
+      <Suspense fallback={<div>Loading bar...</div>}>
         <Bar />
       </Suspense>
     </Box>

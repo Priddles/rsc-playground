@@ -9,8 +9,8 @@ export const doubleCachedExpensiveMessage = cache(unstable_cache(async (msg: str
   console.log(`Computing: ${msg}`);
   const factor = randomInt(3);
   return delayedMessage(msg, (1 + factor) * 250);
-}, ["message"], {tags: ["message"]}));
+}, ["exhibit-9"], {tags: ["exhibit-9"]}));
 
 export async function revalidateMessages() {
-  revalidateTag("message");
+  revalidateTag("exhibit-9");
 }

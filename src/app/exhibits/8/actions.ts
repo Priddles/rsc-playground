@@ -8,8 +8,8 @@ export const cachedExpensiveMessage = unstable_cache(async (msg: string) => {
   console.log(`Computing: ${msg}`);
   const factor = randomInt(3);
   return delayedMessage(msg, (1 + factor) * 250);
-}, ["message"], {tags: ["message"]});
+}, ["exhibit-8"], {tags: ["exhibit-8"]});
 
 export async function revalidateMessages() {
-  revalidateTag("message");
+  revalidateTag("exhibit-8");
 }

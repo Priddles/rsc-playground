@@ -9,9 +9,9 @@ export default async function Bar() {
   ]);
 
   return (
-    <>
+    <Box title="">
       <Box title={hi} />
       <Box title={bye} />
-    </>
+    </Box>
   );
 }

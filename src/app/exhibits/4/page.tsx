@@ -1,20 +1,25 @@
 import Box from "@/components/Box/Box";
+import Title from "@/components/Title/Title";
 import { delayedMessage } from "@/lib/actions";
-import { randomInt } from "crypto";
-import { Suspense } from "react";
-import Greeting from "./Greeting";
+import Bar from "./Bar";
+import Foo from "./Foo";
 
-async function expensiveHello() {
-  const factor = randomInt(2);
-  return delayedMessage("Expensive Hello", 500 + (1 + factor) * 250);
-}
+export default async function Page() {
+  const [greeting, farewell] = await Promise.all([
+    delayedMessage("Expensive hello", 1250),
+    delayedMessage("Cheap goodbye", 250),
+  ]);
 
-export default function Page() {
-  const greeting = expensiveHello();
-
+  /**
+   * @fixme Refactor children to be async so that they can suspend individually.
+   */
   return (
-    <Suspense fallback={<Box title="Loading..." />}>
-      <Greeting greeting={greeting} />
-    </Suspense>
+    <>
+      <Title>Await promises in parent</Title>
+      <Box title="">
+        <Foo greeting={greeting} />
+        <Bar farewell={farewell} />
+      </Box>
+    </>
   );
 }

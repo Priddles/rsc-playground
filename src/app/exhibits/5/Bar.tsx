@@ -1,18 +1,11 @@
 import Box from "@/components/Box/Box";
 
 interface BarProps {
-  greeting: Promise<string>;
   farewell: Promise<string>;
 }
 
-export default async function Bar({ greeting, farewell }: BarProps) {
-  const hi = await greeting;
+export default async function Bar({ farewell }: BarProps) {
   const bye = await farewell;
 
-  return (
-    <>
-      <Box title={hi} />
-      <Box title={bye} />
-    </>
-  );
+  return <Box title={bye} />;
 }

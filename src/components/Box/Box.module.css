@@ -5,7 +5,7 @@
   padding: 1rem;
   gap: 1rem;
 
-  border: 1px solid var(--rsc-color);
+  border: 1px solid var(--rsc-color, transparent);
 }
 
 .box > .title {
