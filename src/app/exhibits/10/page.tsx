@@ -11,6 +11,7 @@ export default function Page() {
       <MyProvider value={123}>
         <Foo />
         <Bar />
+        <Box />
       </MyProvider>
     </Box>
   );
