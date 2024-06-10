@@ -1,12 +1,8 @@
 import ClientBox from "@/components/Box/ClientBox";
-import { doubleCachedExpensiveMessage } from "./actions";
-
-interface FooProps {
-  greeting: Promise<string>;
-}
+import { doubleCachedExpensiveRandomMessage } from "./actions";
 
 export default async function Foo() {
-  const title = await doubleCachedExpensiveMessage("hello");
+  const title = await doubleCachedExpensiveRandomMessage();
 
   return <ClientBox title={title} />;
 }

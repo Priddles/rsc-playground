@@ -1,10 +1,10 @@
 import Box from "@/components/Box/Box";
 import { delayedMessage } from "@/lib/actions";
-import { doubleCachedExpensiveMessage } from "./actions";
+import { doubleCachedExpensiveRandomMessage } from "./actions";
 
 export default async function Bar() {
   const [hi, bye] = await Promise.all([
-    doubleCachedExpensiveMessage("hello"),
+    doubleCachedExpensiveRandomMessage(),
     delayedMessage("bye", 1000),
   ]);
 
