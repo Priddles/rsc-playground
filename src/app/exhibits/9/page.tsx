@@ -28,7 +28,9 @@ export default function Page({ searchParams }: PageProps) {
       <Suspense fallback={<div>Loading bar...</div>}>
         <Bar />
       </Suspense>
-      <Link href={{ query: { revalidate: "1" } }}>Revalidate</Link>
+      <Link href={{ query: { revalidate: "1" } }} prefetch={false}>
+        Revalidate
+      </Link>
     </Box>
   );
 }
