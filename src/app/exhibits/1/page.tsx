@@ -8,7 +8,7 @@ export default function Page() {
       <Title>Client components are always client-side right?</Title>
       <ServerComponent />
       <br />
-      <ClientComponent />
+      <ClientComponent useHooks={false} />
     </>
   );
 }
